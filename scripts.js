@@ -1,5 +1,5 @@
 const URL_ENDPOINT = 'https://pokeapi.co/api/v2/';
-const URL_POKEMON = URL_ENDPOINT + 'pokemon';
+const URL_POKEMON = URL_ENDPOINT + 'pokemon?limit=100&offset=0';
 
 const mostrarLista = (pokemon) => {
     const contenedor = document.getElementById("ListaContenedor");
@@ -15,7 +15,7 @@ const mostrarLista = (pokemon) => {
 fetch(URL_POKEMON)
 .then(data => data.json())
 .then(result => {
-    const results = result.results.slice(0,80);
+    const results = result.results.slice(0,100);
     results.forEach(element =>{
         mostrarLista(element);
     });
