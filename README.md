@@ -1,2 +1,2 @@
-# pwa_parcial_01_Pokemon_DePascali
+# parcial-1-pwa-depascali-martin
  
