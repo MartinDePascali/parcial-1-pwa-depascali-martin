@@ -7,10 +7,14 @@ const mostrarLista = (pokemon) => {
     const contenedor = document.getElementById("ListaContenedor");
     const li = document.createElement('li');
 
-    console.log(pokemon);
-    console.log(pokemon.url.split('/')[6]);
+    // console.log(pokemon);
+    // console.log(pokemon.url.split('/')[6]);
 
     const id = pokemon.url.split('/')[6];
+
+    li.addEventListener('click', () => {
+        mostrarDetalles(id);
+    })
 
     const nombre = document.createElement('h2');
     nombre.innerText = pokemon.name;
@@ -22,6 +26,10 @@ const mostrarLista = (pokemon) => {
     li.appendChild(imagen);
 
     contenedor.appendChild(li);
+}
+
+const mostrarDetalles = (id) =>  {
+    window.location.href = "http://127.0.0.1:5501/index.html?id=" + id;
 }
 
 fetch(URL_POKEMON)
