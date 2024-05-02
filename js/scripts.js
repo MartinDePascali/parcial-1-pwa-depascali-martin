@@ -29,7 +29,7 @@ const mostrarLista = (pokemon) => {
 }
 
 const mostrarDetalles = (id) =>  {
-    window.location.href = "http://127.0.0.1:5501/index.html?id=" + id;
+    window.location.href = "http://127.0.0.1:5501/detalle.html?id=" + id;
 }
 
 fetch(URL_POKEMON)
