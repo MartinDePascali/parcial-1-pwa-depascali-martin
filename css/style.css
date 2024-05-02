@@ -32,10 +32,25 @@ li{
     list-style: none;
 }
 
+.btn-volver{
+    background-color: red;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    margin: 2em auto;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
 #ListaContenedor{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color:#f9f9f9;
 }
 
 #ListaContenedor li{
@@ -63,14 +78,17 @@ li{
 #ListaContenedorDetalles{
     display: flex;
     align-items: center;
-    background-color: gray;
-    width: 80%;
+    background-color: #f9f9f9;
+    width: 85%;
     margin: 2em auto;
     border-radius: 10px;
     padding: 4em;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-#ListaContenedorDetalles ul{
+#ListaContenedorDetalles .lista-tipos{
     display: flex;
     justify-content: space-between;
     width: 50%;
@@ -80,7 +98,7 @@ li{
     text-transform: capitalize;
 }
 
-#ListaContenedorDetalles img{
+#ListaContenedorDetalles > div:first-of-type img{
     width:80%;
 }
 
@@ -114,6 +132,117 @@ li{
     background-color:#b97fc9;
 }
 
+.fire{
+    background-color:#e3350d;
+}
+
+.water{
+    background-color:#30a7d7;
+}
+
+.flying{
+    background-color:#adadad;
+}
+
+.bug{
+    background-color:#6e9139;
+}
+
+.normal{
+    background-color:#838383;
+}
+
+.electric{
+    background-color:#ebe859;
+    color:#181818;
+}
+
+.ground{
+    background-color:#bb8b23;
+}
+
+.fairy{
+    background-color:#eeb1ff;
+    color:#181818;
+}
+
+.ice{
+    background-color:#227494;
+}
+
+.fighting{
+    background-color:#974900;
+}
+
+.psychic{
+    background-color:#5e5fc4;
+}
+
+.rock{
+    background-color:#5a5a5a;
+}
+
+.ghost{
+    background-color:#393a74;
+}
+
+.dragon{
+    background-color:#ec5700;
+}
+
+.dark{
+    background-color:#181818;
+}
+
+.steel{
+    background-color:#424242;
+}
+
 .lista-habilidades li{
     margin:10px;
+}
+
+#ListaContenedorDetalles .stats {
+	display: grid;
+	grid-template-columns: auto;
+	gap: .5em 0;
+	align-items: center;
+	margin: 10px 0 0 0;
+	padding: 0;
+	list-style-type: none;
+	grid-auto-columns: 1fr;
+}
+
+.stats li {
+	background: #30a7d7;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.25rem 0.5rem;
+    color:#fff;
+    border-radius: 10px;
+}
+
+.stats li:first-of-type{
+    background-color:#9bcc50;
+}
+
+.stats li:nth-of-type(2){
+    background-color:#cc5050;
+}
+
+.stats li:nth-of-type(3){
+    background-color:#5052cc;
+}
+
+.stats li:nth-of-type(4){
+    background-color:#b750cc;
+}
+
+.stats li:nth-of-type(6){
+    background-color:#cf672b;
+}
+
+.stats li span {
+	font-weight: bold;
 }
