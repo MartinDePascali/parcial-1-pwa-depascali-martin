@@ -7,9 +7,6 @@ const mostrarLista = (pokemon) => {
     const contenedor = document.getElementById("ListaContenedor");
     const li = document.createElement('li');
 
-    // console.log(pokemon);
-    // console.log(pokemon.url.split('/')[6]);
-
     const id = pokemon.url.split('/')[6];
 
     li.addEventListener('click', () => {
@@ -17,7 +14,7 @@ const mostrarLista = (pokemon) => {
     })
 
     const nombre = document.createElement('h2');
-    nombre.innerText = pokemon.name;
+    nombre.innerText = id + '-' + pokemon.name;
     li.appendChild(nombre);
 
     const imagen = document.createElement('img');
