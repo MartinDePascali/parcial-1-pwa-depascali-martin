@@ -17,11 +17,28 @@
 body{
     max-width:1200px;
     margin:auto;
+    background-color:#f6f8fc;
+    background-image: url(../imagenes/FondoBody.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 header{
     padding:2em;
-    background-color:#e3350d;
+    margin-top:2em;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background-image:url('/imagenes/fondoPoke.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 110px;
+}
+
+h1{
+    color:#d83235;
 }
 
 ul{
@@ -33,8 +50,9 @@ li{
 }
 
 .btn-volver{
-    background-color: red;
-    color: #fff;
+    background-color: #fff;
+    color: #d83235;
+    font-weight:bold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,11 +64,21 @@ li{
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+.btn-volver:hover{
+    background-color:#550000;
+    background-image: url(/imagenes/fondoPoke.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 110px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    color:#fff;
+}
+
 #ListaContenedor{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color:#f9f9f9;
+    border-radius: 10px;
 }
 
 #ListaContenedor li{
@@ -64,10 +92,8 @@ li{
     cursor: pointer;
     background-color: #fff;
     border-radius: 10px;
-
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
     background-image:url('/imagenes/fondoPoke.svg');
     background-repeat: no-repeat;
     background-position: center 27px;
@@ -75,11 +101,23 @@ li{
 }
 
 #ListaContenedor li:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: inset 0px 0px 21px 10px rgba(0,0,0,0.1);
 }
 
 #ListaContenedor h2{
     text-transform: capitalize;
+}
+
+.datos-pokedex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: .5em;
+    font-weight: bold;
+}
+
+.datos-pokedex p{
+    color:#a7a7a7;
 }
 
 /*----Pantalla detalles----*/
@@ -92,19 +130,23 @@ li{
     margin: 2em auto;
     border-radius: 10px;
     padding: 4em;
-
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #ListaContenedorDetalles .lista-tipos{
     display: flex;
     justify-content: space-between;
-    width: 50%;
 }
 
 #ListaContenedorDetalles h2{
     text-transform: capitalize;
+}
+
+.contenedor-imagen-tipos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #ListaContenedorDetalles > div:first-of-type img{
@@ -115,15 +157,8 @@ li{
     background-size: contain;
 }
 
-.imagen-historial{
-    background-image:url('/imagenes/fondoPoke.svg');
-    background-repeat: no-repeat;
-    background-position: -20px;
-    background-size: contain;
-}
-
 .contenedor-datos > *{
-    margin-bottom:10px;
+    margin-bottom:1em;
 }
 
 .contenedor-datos > h2{
@@ -218,8 +253,18 @@ li{
     background-color:#424242;
 }
 
+.lista-habilidades{
+    display:flex;
+    justify-content: flex-start;
+}
+
 .lista-habilidades li{
     margin:10px;
+    background-color: #f1f3f4;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-align: center;
 }
 
 #ListaContenedorDetalles .stats {
@@ -267,8 +312,82 @@ li{
 	font-weight: bold;
 }
 
+.caracteristicas{
+    display: flex;
+    justify-content: space-between;
+    margin-top:1em;
+}
+
+.contenedor-caracteristicas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-caracteristicas{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.texto-caracteristicas{
+    background-color: #f1f3f4;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+
+/*-----Historial------*/
+
 .historial{
-    background-color: #ededed;
     padding: 10px;
-    margin: 10px 0;
+    margin: 30px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.imagen-historial{
+    display:inline-block;
+    background-image:url('/imagenes/fondoPoke.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.imagen-historial:hover{
+    cursor: pointer;
+    -webkit-animation: shake .5s infinite alternate;
+    animation: shake .5s infinite alternate;
+}
+
+@keyframes shake {
+    0% {
+      transform: rotate(7deg);
+    }
+    25% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-7deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+}
+
+@media (max-width:1024px){
+    #ListaContenedor h2 {
+        font-size: 1em;
+    }
+
+    #ListaContenedor li{
+        width: 30%;
+    }
+
+    #ListaContenedorDetalles{
+        flex-direction: column;
+    }
 }

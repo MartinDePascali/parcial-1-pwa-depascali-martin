@@ -11,6 +11,7 @@ const mostrarDetalles = (pokemon) => {
     div.setAttribute('class', 'contenedor-datos');
 
         const divImagen = document.createElement('div');
+        divImagen.setAttribute('class', 'contenedor-imagen-tipos')
             const id = URL_POKEMON.split('/')[6];
             const imagen = document.createElement('img');
             imagen.setAttribute('src', URL_IMAGEN + id + '.png');
@@ -61,17 +62,53 @@ const mostrarDetalles = (pokemon) => {
 
         div.appendChild(contenedorSprites);
 
-        const pokedexNumber = document.createElement('p');
-        pokedexNumber.innerText = 'N°: ' + pokemon.order;
-        div.appendChild(pokedexNumber);
-        
-        const altura = document.createElement('p');
-        altura.innerText = 'Altura: ' + pokemon.height + 'm';
-        div.appendChild(altura);
+        const contenedorCaracteristicas = document.createElement('div');
+            const tituloCaracteristicas = document.createElement('h3');
+            tituloCaracteristicas.innerText = 'Características';
+            contenedorCaracteristicas.appendChild(tituloCaracteristicas);
 
-        const peso = document.createElement('p');
-        peso.innerText = 'Peso: ' + pokemon.weight + 'kg';
-        div.appendChild(peso);
+            const contenedorCaracteristicasDiv = document.createElement('div');
+            contenedorCaracteristicasDiv.setAttribute('class', 'caracteristicas');
+
+            const pokedexNumberContenedor = document.createElement('div');
+            pokedexNumberContenedor.setAttribute('class', 'contenedor-caracteristicas');
+                const pokedexNumberalturaTitulo = document.createElement('p');
+                pokedexNumberalturaTitulo.setAttribute('class', 'titulo-caracteristicas');
+                pokedexNumberalturaTitulo.innerText = 'N°';
+                const pokedexNumber = document.createElement('p');
+                pokedexNumber.setAttribute('class', 'texto-caracteristicas');
+                pokedexNumber.innerText = pokemon.order;
+                pokedexNumberContenedor.appendChild(pokedexNumberalturaTitulo);
+                pokedexNumberContenedor.appendChild(pokedexNumber);
+            contenedorCaracteristicasDiv.appendChild(pokedexNumberContenedor);
+            
+            const alturaContenedor = document.createElement('div');
+            alturaContenedor.setAttribute('class', 'contenedor-caracteristicas');
+                const alturaTitulo = document.createElement('p');
+                alturaTitulo.setAttribute('class', 'titulo-caracteristicas');
+                alturaTitulo.innerText = 'Altura';
+                const altura = document.createElement('p');
+                altura.setAttribute('class', 'texto-caracteristicas');
+                altura.innerText = pokemon.height + 'm';
+                alturaContenedor.appendChild(alturaTitulo);
+                alturaContenedor.appendChild(altura);
+            contenedorCaracteristicasDiv.appendChild(alturaContenedor);
+
+
+            const pesoContenedor = document.createElement('div');
+            pesoContenedor.setAttribute('class', 'contenedor-caracteristicas');
+                const pesoTitulo = document.createElement('p');
+                pesoTitulo.setAttribute('class', 'titulo-caracteristicas');
+                pesoTitulo.innerText = 'Peso';
+                const peso = document.createElement('p');
+                peso.setAttribute('class', 'texto-caracteristicas');
+                peso.innerText = pokemon.weight + 'kg';
+                pesoContenedor.appendChild(pesoTitulo);
+                pesoContenedor.appendChild(peso);
+            contenedorCaracteristicasDiv.appendChild(pesoContenedor);
+
+        contenedorCaracteristicas.appendChild(contenedorCaracteristicasDiv);
+        div.appendChild(contenedorCaracteristicas);
         
         const containerAudio = document.createElement('div');
             const tituloAudio = document.createElement('h3');

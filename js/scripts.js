@@ -17,14 +17,18 @@ const mostrarLista = (pokemon) => {
 
     li.addEventListener('click', () => {
         mostrarDetalles(id);
-
-        console.log(pokemon);
         guardarPokemon(pokemon);
     })
 
-    const nombre = document.createElement('h2');
-    nombre.innerText = id + '-' + pokemon.name;
-    li.appendChild(nombre);
+    const contenedorDatos = document.createElement('div');
+    contenedorDatos.setAttribute('class', 'datos-pokedex');
+        const numeroPokedex = document.createElement('p');
+        numeroPokedex.innerText = 'N°' + id;
+        const nombre = document.createElement('h2');
+        nombre.innerText = pokemon.name;
+    contenedorDatos.appendChild(numeroPokedex);
+    contenedorDatos.appendChild(nombre);
+    li.appendChild(contenedorDatos);
 
     const imagen = document.createElement('img');
     imagen.setAttribute('src', URL_IMAGEN + id + '.png');
@@ -39,19 +43,22 @@ const mostrarDetalles = (id) =>  {
 }
 
 const mostrarPokemonHistorial = (item) => {
-    // const listaHistorial = document.querySelector('.historial');
-    // const tarjetaHistorial = document.createElement('p');
-    // tarjetaHistorial.className = "item";
-    // tarjetaHistorial.innerText = JSON.stringify(item.name);
-    // listaHistorial.appendChild(tarjetaHistorial);
+    const contenedorHistorial = document.querySelector('.historial');
+    const contenedorImagen = document.createElement('div');
+    contenedorImagen.setAttribute('class', 'imagen-historial');
 
-    const listaHistorial = document.querySelector('.historial');
     const id = item.url.split('/')[6];
     const imagen = document.createElement('img');
     imagen.setAttribute('src', URL_IMAGEN + id + '.png');
     imagen.setAttribute('alt', item.name);
-    imagen.setAttribute('class', 'imagen-historial');
-    listaHistorial.appendChild(imagen);
+
+    imagen.addEventListener('click', () => {
+        mostrarDetalles(id);
+        guardarPokemon(pokemon);
+    })
+
+    contenedorImagen.appendChild(imagen);
+    contenedorHistorial.appendChild(contenedorImagen);
 }
 
 const mostrarHistorial = () => {
