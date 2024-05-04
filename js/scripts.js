@@ -42,33 +42,6 @@ const mostrarDetalles = (id) =>  {
     window.location.href = "http://127.0.0.1:5501/detalle.html?id=" + id;
 }
 
-const mostrarPokemonHistorial = (item) => {
-    const contenedorHistorial = document.querySelector('.historial');
-    const contenedorImagen = document.createElement('div');
-    contenedorImagen.setAttribute('class', 'imagen-historial');
-
-    const id = item.url.split('/')[6];
-    const imagen = document.createElement('img');
-    imagen.setAttribute('src', URL_IMAGEN + id + '.png');
-    imagen.setAttribute('alt', item.name);
-
-    imagen.addEventListener('click', () => {
-        mostrarDetalles(id);
-        guardarPokemon(pokemon);
-    })
-
-    contenedorImagen.appendChild(imagen);
-    contenedorHistorial.appendChild(contenedorImagen);
-}
-
-const mostrarHistorial = () => {
-    const datos = JSON.parse(localStorage.getItem("historial")) || [];
-
-    datos.forEach(item => {
-        mostrarPokemonHistorial(item);
-    })
-}
-
 fetch(URL_POKEMON)
 .then(data => data.json())
 .then(result => {
@@ -77,5 +50,3 @@ fetch(URL_POKEMON)
         mostrarLista(element);
     });
 })
-
-mostrarHistorial();
